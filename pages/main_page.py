@@ -2,6 +2,7 @@ import allure
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 
+from config import BASE_URL
 from pages.base_page import BasePage
 from locators import MainPageLocators
 
@@ -9,7 +10,7 @@ from locators import MainPageLocators
 class MainPage(BasePage):
     @allure.step('Открыть главную страницу Самоката')
     def open(self):
-        self.driver.get(self.BASE_URL)
+        self.driver.get(BASE_URL)
         self.find(MainPageLocators.FAQ_TITLE)
         self.accept_cookies()
         return self

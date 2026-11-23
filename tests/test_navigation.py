@@ -1,6 +1,7 @@
 import allure
 from selenium.webdriver.support.ui import WebDriverWait
 
+from config import BASE_URL
 from pages.base_page import BasePage
 from pages.main_page import MainPage
 from pages.order_page import OrderPage
@@ -13,7 +14,7 @@ class TestNavigation:
         MainPage(driver).open().start_order('top')
         OrderPage(driver).click_scooter_logo()
 
-        assert driver.current_url.rstrip('/') == BasePage.BASE_URL.rstrip('/')
+        assert driver.current_url.rstrip('/') == BASE_URL.rstrip('/')
         assert MainPage(driver).is_home_page_open()
 
     @allure.title('Логотип Яндекса открывает Дзен в новой вкладке')

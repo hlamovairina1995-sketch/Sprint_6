@@ -5,8 +5,6 @@ from locators import HeaderLocators
 
 
 class BasePage:
-    BASE_URL = 'https://qa-scooter.praktikum-services.ru/'
-
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 15)

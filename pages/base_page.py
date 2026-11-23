@@ -13,6 +13,10 @@ class BasePage:
     def open(self, url):
         self.driver.get(url)
 
+    def format_locator(self, locator, **values):
+        by, selector = locator
+        return by, selector.format(**values)
+
     def find(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator))
 

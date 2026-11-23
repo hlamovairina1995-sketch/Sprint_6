@@ -13,9 +13,7 @@ class MainPageLocators:
     BOTTOM_ORDER_BUTTON = (By.CSS_SELECTOR, 'button[class*="Button_Middle"]')
     COOKIE_BUTTON = (By.ID, 'rcc-confirm-button')
 
-    @staticmethod
-    def faq_answer(panel_id):
-        return By.ID, panel_id
+    FAQ_ANSWER = (By.ID, '{panel_id}')
 
 
 class OrderPageLocators:
@@ -35,20 +33,12 @@ class OrderPageLocators:
     CONFIRM_BUTTON = (By.XPATH, '//button[normalize-space()="Да"]')
     SUCCESS_MESSAGE = (By.XPATH, '//*[contains(text(), "Заказ оформлен")]')
 
-    @staticmethod
-    def metro_option(station):
-        return (
-            By.XPATH,
-            f'//button[contains(@class,"select-search__option")][.//*[normalize-space()="{station}"]]',
-        )
-
-    @staticmethod
-    def rental_option(duration):
-        return (
-            By.XPATH,
-            f'//div[contains(@class,"Dropdown-option") and normalize-space()="{duration}"]',
-        )
-
-    @staticmethod
-    def scooter_color(color):
-        return By.ID, color
+    METRO_OPTION = (
+        By.XPATH,
+        '//button[contains(@class,"select-search__option")][.//*[normalize-space()="{station}"]]',
+    )
+    RENTAL_OPTION = (
+        By.XPATH,
+        '//div[contains(@class,"Dropdown-option") and normalize-space()="{duration}"]',
+    )
+    SCOOTER_COLOR = (By.ID, '{color}')

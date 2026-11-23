@@ -35,7 +35,8 @@ class MainPage(BasePage):
         question_text = question.text
         panel_id = question.get_attribute('aria-controls')
         self.click_element_near_right_edge(question)
-        answer = self.find(MainPageLocators.faq_answer(panel_id))
+        answer_locator = self.format_locator(MainPageLocators.FAQ_ANSWER, panel_id=panel_id)
+        answer = self.find(answer_locator)
         return question_text, answer.text
 
     def is_home_page_open(self):

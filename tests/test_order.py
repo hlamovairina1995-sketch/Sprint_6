@@ -16,7 +16,7 @@ class TestOrder:
     )
     def test_successful_order(self, driver, order_data):
         main = MainPage(driver)
-        main.open()
+        main.open_main_page()
         main.start_order(order_data['entry_point'])
         
         order = OrderPage(driver)

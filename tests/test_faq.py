@@ -14,7 +14,7 @@ class TestFaq:
         ids=[f'faq-{i + 1}' for i in range(len(FAQ_CASES))],
     )
     def test_faq_answer(self, driver, index, expected_question, expected_answer):
-        page = MainPage(driver).open()
+        page = MainPage(driver).open_main_page()
         actual_question, actual_answer = page.open_faq(index)
 
         assert actual_question == expected_question

@@ -13,6 +13,7 @@ class MainPage(BasePage):
         self.accept_cookies()
         return self
 
+    @allure.step('Принять использование cookies')
     def accept_cookies(self):
         buttons = self.find_elements(MainPageLocators.COOKIE_BUTTON)
         if buttons and buttons[0].is_displayed():
@@ -39,5 +40,6 @@ class MainPage(BasePage):
         answer = self.find(answer_locator)
         return question_text, answer.text
 
+    @allure.step('Проверить, что главная страница открыта')
     def is_home_page_open(self):
         return self.find(MainPageLocators.FAQ_TITLE).is_displayed()

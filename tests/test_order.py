@@ -8,12 +8,12 @@ from pages.order_page import OrderPage
 
 @allure.feature('Оформление заказа')
 class TestOrder:
-    @allure.title('Успешный заказ через кнопку: {order_data[entry_point]}')
     @pytest.mark.parametrize(
         'order_data',
         ORDER_CASES,
         ids=['top-button', 'bottom-button'],
     )
+    @allure.title('Успешный заказ через кнопку: {order_data[entry_point]}')
     def test_successful_order(self, driver, order_data):
         main = MainPage(driver)
         main.open_main_page()
